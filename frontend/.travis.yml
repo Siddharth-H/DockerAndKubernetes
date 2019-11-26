@@ -1,0 +1,10 @@
+sudo: required # Whenever we are using docker
+services:
+  - docker # telling travis CI that we need docker
+
+before_install: # series of steps we need before the test run
+  - docker build -t siddharth/docker-react -f Dockerfile.dev .
+
+script: #difference commands to execute the test scripts
+  # - docker run siddharth/docker-react npm run test -- --coverage
+  - docker run -e CI=true siddharth/docker-react npm run test -- --coverage
