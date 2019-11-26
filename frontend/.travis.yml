@@ -1,3 +1,4 @@
+# for GitHub
 sudo: required # Whenever we are using docker
 services:
   - docker # telling travis CI that we need docker
