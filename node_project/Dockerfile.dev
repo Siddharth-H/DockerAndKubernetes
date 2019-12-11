@@ -1,0 +1,12 @@
+# This will only run in developer env
+
+From node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD [ "npm", "run", "start" ]
